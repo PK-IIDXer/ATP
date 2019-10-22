@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Elements">
+      <HintPath>..\..\FormulaDetector\Elements\bin\Release\netstandard2.0\Elements.dll</HintPath>
+    </Reference>
+    <Reference Include="FormulaValidator">
+      <HintPath>..\..\FormulaDetector\FormulaValidator\bin\Release\netstandard2.0\FormulaValidator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
