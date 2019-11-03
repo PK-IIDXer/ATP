@@ -167,10 +167,11 @@ namespace Elements
             var counter = 0;
             for (var i = 0; i < bLength; i++)
             {
-                if (Body[i + counter * tLength].Name == x.Name)
+                if (Body[i + counter * (tLength - 1)].Name == x.Name
+                    && Body[i + counter * (tLength - 1)].Type == x.Type)
                 {
-                    Body.RemoveAt(i + counter * tLength);
-                    Body.InsertRange(i + counter * tLength, t.Body);
+                    Body.RemoveAt(i + counter * (tLength - 1));
+                    Body.InsertRange(i + counter * (tLength - 1), t.Body);
 
                     counter++;
                 }
