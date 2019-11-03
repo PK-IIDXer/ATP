@@ -81,6 +81,7 @@ namespace Elements
         /// <summary>
         /// 文字を生成します。
         /// </summary>
+        /// <param name="name">名称</param>
         /// <param name="type">文字のタイプ</param>
         /// <param name="argCnt">引数の個数</param>
         /// <param name="termPropType">項・命題型</param>
@@ -103,8 +104,13 @@ namespace Elements
 
             if (termPropType != TermPropTypes.None)
             {
-                if (type != Types.Quantifier)
+                if (type != Types.Quantifier && type != Types.Square)
                     throw new ArgumentException("項・命題型を指定できない文字タイプです");
+            }
+
+            if (type == Types.Quantifier)
+            {
+                argCnt = 1;
             }
 
             Type = type;
@@ -124,22 +130,23 @@ namespace Elements
             Types type,
             TermPropTypes termPropType)
         {
-            if (type == Types.Value)
-                return TermPropTypes.Term;
-
-            if (type == Types.Function)
-                return TermPropTypes.Term;
-
-            if (type == Types.Predicate)
-                return TermPropTypes.Proposition;
-
-            if (type == Types.Conjunction)
-                return TermPropTypes.Proposition;
-
-            if (type == Types.Quantifier)
-                return termPropType;
-
-            return TermPropTypes.None;
+            switch (type)
+            {
+                case Types.Value:
+                    return TermPropTypes.Term;
+                case Types.Square:
+                    return termPropType;
+                case Types.Function:
+                    return TermPropTypes.Term;
+                case Types.Predicate:
+                    return TermPropTypes.Proposition;
+                case Types.Conjunction:
+                    return TermPropTypes.Proposition;
+                case Types.Quantifier:
+                    return termPropType;
+                default:
+                    return TermPropTypes.None;
+            }
         }
 
         public override string ToString()

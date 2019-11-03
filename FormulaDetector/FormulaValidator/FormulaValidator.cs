@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace FormulaDetector
 {
+    /// <summary>
+    /// 論理式バリデータ
+    /// </summary>
     public static class FormulaValidator
     {
         /// <summary>
@@ -28,7 +31,7 @@ namespace FormulaDetector
             {
                 if (chr.Type != Charactor.Types.Value && chr.Type != Charactor.Types.Square)
                 {
-                    // 関数型文字のとき、
+                    // 変数でも□でもない型の文字のとき、
                     // 現在の部分文字列に同じ型のダミー文字を挿入し、新たな部分文字列を追加する
                     Charactor dummy;
                     switch (chr.Type)
@@ -92,13 +95,6 @@ namespace FormulaDetector
                         break;
 
                     case Charactor.Types.Quantifier:
-
-                        if (subStr.Count < 3)
-                            return false;
-
-                        if (subStr[1].Type != Charactor.Types.Value && subStr[1].Type != Charactor.Types.Square)
-                            return false;
-
                         break;
                 }
             }
