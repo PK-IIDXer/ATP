@@ -149,6 +149,28 @@ namespace Elements
             }
         }
 
+        public Charactor Copy()
+        {
+            return new Charactor(Name, Type, ArgCount, TermPropType);
+        }
+
+        public bool Equals(Charactor charactor)
+        {
+            if (Name != charactor.Name)
+                return false;
+
+            if (Type != charactor.Type)
+                return false;
+
+            if (ArgCount != charactor.ArgCount)
+                return false;
+
+            if (TermPropType != charactor.TermPropType)
+                return false;
+
+            return true;
+        }
+
         public override string ToString()
         {
             return string.Format("[{0}]", Name);

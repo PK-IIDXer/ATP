@@ -178,6 +178,25 @@ namespace Elements
             }
         }
 
+        public CharSequence Copy()
+        {
+            return new CharSequence(Body, Chains);
+        }
+
+        public bool Equals(CharSequence obj)
+        {
+            if (Body.Count != obj.Body.Count)
+                return false;
+
+            for (var i = 0; i < Body.Count; i++)
+            {
+                if (!Body[i].Equals(obj.Body[i]))
+                    return false;
+            }
+
+            return true;
+        }
+
         public override string ToString()
         {
             string result = "";
