@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequentCalculator", "SequentCalculator\SequentCalculator.csproj", "{456D8488-E059-4061-928B-C387E1AE4E97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{456D8488-E059-4061-928B-C387E1AE4E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{456D8488-E059-4061-928B-C387E1AE4E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{456D8488-E059-4061-928B-C387E1AE4E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{456D8488-E059-4061-928B-C387E1AE4E97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {536A301D-EA61-45E5-81AA-E825CCCF9F8C}
+	EndGlobalSection
+EndGlobal
